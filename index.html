@@ -1,0 +1,475 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" />
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", "PingFang TC", "Apple LiGothic Medium", Roboto, "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+            background-color: #eeeeed;
+        }
+
+        a {
+            color: #2d2d2d;
+            text-decoration: none;
+            border-bottom: 1px solid #c71b0a;
+        }
+
+        header,
+        article>header {
+            max-width: calc(270/320*100%);
+            margin: 0 auto;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            header {
+                width: 678px;
+            }
+
+            article,
+            article>header {
+                max-width: 678px;
+                margin: 0 auto;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            header {
+                width: 900px;
+            }
+
+            article,
+            article>header {
+                max-width: 900px;
+                margin: 0 auto;
+            }
+        }
+
+        header>table {
+            width: 100%;
+            background-color: #eeeeed;
+        }
+
+        article>header>span {
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 2.25;
+        }
+
+        article>header>h1 {
+            margin-top: 11px;
+            font-size: 34px;
+            font-weight: bold;
+            line-height: 1.32;
+        }
+
+        article {
+            color: #2d2d2d;
+        }
+
+        article>figure {
+            margin: 40px 0 0 0;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            article>figure {
+                width: 678px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .float-right {
+                float: left;
+                width: 300px;
+                margin-top: 40px;
+                margin-right: 40px;
+                margin-bottom: 50px;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            article>figure {
+                width: 900px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .float-right {
+                float: right;
+                width: 360px;
+                margin-top: 40px;
+                margin-left: 40px;
+                margin-bottom: 50px;
+            }
+        }
+
+        article>p,
+        article>h2,
+        article>blockquote,
+        article>ul,
+        article figcaption,
+        article>div,
+        article>header {
+            max-width: calc(270/320*100%);
+            margin: 0 auto;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            article>p,
+            article>h2,
+            article>blockquote,
+            article>ul,
+            article figcaption,
+            article>div,
+            article>header,
+            article>ul {
+                width: 550px;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            article>p,
+            article>h2,
+            article>blockquote,
+            article>ul,
+            article figcaption,
+            article>div,
+            article>header {
+                max-width: 756px;
+            }
+            article>ul {
+                width: 700px;
+            }
+        }
+
+        article>ul {
+            width: 100%;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        article video,
+        article audio {
+            margin-top: 40px;
+            width: 100%;
+        }
+
+        article>p,
+        article>blockquote {
+            font-size: 18px;
+            line-height: 2.0;
+            letter-spacing: 0.9px;
+            margin-top: 40px;
+        }
+
+        article>blockquote {
+            padding-left: 21px;
+            color: #6d6d6d;
+            border-left: 1px solid #6d6d6d;
+        }
+
+        article>h2 {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1.1px;
+            line-height: 1.64;
+            margin-top: 40px;
+        }
+
+        article figcaption {
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 0.8px;
+            color: #6d6d6d;
+            margin-top: 15px;
+        }
+
+        .header {
+            margin-top: 17px;
+            margin-bottom: 17px;
+        }
+
+        .logo {
+            width: 100px;
+            height: 31px;
+        }
+
+        .menu {
+            width: 31px;
+            height: 31px;
+        }
+
+        .author {
+            margin-right: 30px;
+            font-size: 15px;
+            line-height: 2.25;
+        }
+
+        .introduction {
+            font-size: 22px;
+            line-height: 1.82;
+            letter-spacing: 1.6px;
+            text-align: justify;
+            margin-top: 30px;
+        }
+
+        .related-text {
+            font-size: 16px;
+            line-height: 2.25;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .related-items {
+            margin-bottom: 60px;
+        }
+
+        .related-item {
+            background-color: #e1e1e1;
+            margin-top: 20px;
+            padding: 20px;
+            cursor: pointer;
+        }
+
+        .related-item>img {
+            width: 20%;
+            vertical-align: middle;
+        }
+
+        .related-item>div {
+            display: inline-block;
+            width: 70%;
+            padding-left: 20px;
+            vertical-align: middle;
+            line-height: 1.5;
+        }
+
+        footer {
+            background-color: #bfbfbf;
+            min-height: 300px;
+        }
+
+        footer>table {
+            border-spacing: 45px;
+            width: 100%;
+        }
+
+        .footer-circle1 {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #397a69;
+            margin: 0 auto;
+        }
+
+        .footer-circle2 {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #cc8e24;
+            margin: 0 auto;
+        }
+
+        .footer-circle3 {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #781c20;
+            margin: 0 auto;
+        }
+
+        .footer-text {
+            margin-top: 15px;
+            font-size: 18px;
+            text-align: center;
+            color: #777;
+        }
+
+        .embed-box {
+            position: relative;
+            margin-top: 60px;
+        }
+
+        .embed-box>iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+
+        @media screen and (max-width: 767px) {
+            table.hidden-on-mobile {
+                display: none;
+            }
+
+            table.shown-on-mobile {
+                display: table;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            table.hidden-on-mobile {
+                display: table;
+                max-width: 770px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            table.shown-on-mobile {
+                display: none;
+            }
+        }
+
+        .flex-footer {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header class="header">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="logo">
+                            <img src="長版-01.png" alt="logo7pupu" class="logo" />
+                        </div>
+                    </td>
+                   
+                    <td style="width:22px;">
+                        <div class="menu">
+                            <img src="右邊按鈕-01.png" alt="bottom7pupu" class="menu" />
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </header>
+    <div style="background-color:#b5b6b6">
+        <article>
+            <header>
+                <h1 style="padding-top:40px">運用窺探視角　芮淇捕捉行人自然樣貌</h1>
+            </header>
+            <div style="margin-bottom:15px">
+                <span class="author">文／
+                    <b>
+                        <a>楊旻蓁</a>
+                    </b>
+                </span>
+            </div>
+
+            <p>
+                「我不追求美麗或靜止狀態的景觀，而是怎麼將不安、不舒適感用作品呈現出來。」倫敦大學金匠學院（Goldsmiths, University of London）影像與數位藝術系研究生芮淇，24日起於小島藝廊舉辦為期一個月的攝影展《意識對話Consciously
+                Construction》。攝影展包含三系列25張照片，作品多半沒有明顯輪廓，卻呈現拍攝者與被攝者當下的自然舒適。
+            </p>
+            <P>
+                模糊的車子、歪斜的建築與街道，系列一〈一體-Integrate〉的作品，顛覆人們慣見的具體輪廓，呈現流動般的影像。為使拍攝者與被攝者皆呈現自然樣貌，芮淇運用不同方式鬆懈人們防備。在此系列中，她將相機擺在胸前或大腿旁，相機與身體融合，有如身體一部份，藉此避開行人注意。
+            </P>
+            <div style="width:100%">
+                <div style="margin-top:40px">
+                    <img src="系列一.jpg" alt="胎變圖片1" width="100%" />
+                </div>
+                <figcaption>系列一〈一體－Integrate〉作品。將相機擺放身邊所拍攝，強調人與相機融為一體。圖／芮淇提供
+                </figcaption>
+            </div>
+            <p>
+                系列二〈點－Point〉中，門框外的行人來來往往，芮淇則處於暗處，在被攝者沒有察覺的情況下，於原地捕捉往來人群。為使觀眾感受創作者身在暗處的當下，芮淇運用黑色布簾，在一塊塊細長布簾之間保留縫隙，觀眾可從布簾左側、右側，甚至由內往外看，透過有限的視野觀看往來人群，提供多視角的觀看經驗。芮淇也提到，〈點〉系列門框外的被攝者互不認識，卻都經過同一處，好似有種關聯性。
+            </p>
+            <div style="margin-top:40px">
+                <img src="系列二.jpg" alt="胎變圖片2" width="100%" />
+                <figcaption>系列二〈點－Point〉作品。在無意識的情況下，芮淇走入暗處的階梯拍攝來往行人。圖／芮淇提供</figcaption>
+            </div>
+            <div style="margin-top:40px">
+                <img src="系列二布置.jpg" alt="胎變圖片2" width="100%" />
+                <figcaption>以含有空隙的布簾布置系列二〈點－Point〉，讓觀眾以各種角度觀看此系列作品。圖／楊旻蓁攝</figcaption>
+            </div>
+            <p>
+                系列三〈錯亂－Disorder〉，則使用多種反射手法，拍攝開車的司機、下雨後的網球場倒影，讓觀者在虛實之間感到錯亂，也避免直接打擾被攝者。芮淇觀察到，當被攝者注意到眼前的相機，便會改變自己的舉止。旅居歐洲後，更發覺歐洲人在被拍攝時，會更加敏感，甚至有些地方禁止拍攝。
+            </p>
+            <div style="width:100%">
+                <div style="margin-top:40px">
+                    <img src="系列三.jpg" alt="胎變圖片3" width="100%" />
+                </div>
+                <figcaption>系列三〈錯亂－Disorder〉作品。運用鏡像拍攝，使人在虛實之間產生錯亂。圖／芮淇提供
+                </figcaption>
+            </div>
+            <p>
+                觀眾、中國醫藥大學醫學系學生陳德叡提到，暑假也在倫敦拍攝窗戶外的人，並持續將近一個上午，因此對於拍攝者與被攝者雙方都感到舒服的狀態極有共鳴。他也認為，當感到迷惘的時候，用影像表現自己的情緒是很好的宣洩。
+            </p>
+
+
+
+            <div class="related-text" style="clear:both;margin-top:40px;margin-bottom:20px;">其他作品</div>
+
+            <ul class="related-items" style="padding-bottom:40px">
+                <li class="related-item">
+                    <img src="藻類.jpg"></img>
+
+                    <div>
+                        <p class="card-text">
+                            <a href="http://www.unews.nccu.edu.tw/unews/f%E6%88%90%E5%A4%A7%E8%AD%89%E5%AF%A6%E9%81%8E%E6%B0%A7%E5%8C%96%E6%B0%AB%E5%8F%AF%E6%9C%89%E6%95%88%E7%A0%B4%E5%A3%9E%E8%97%BB%E7%B4%B0%E8%83%9E/">
+                                過氧化氫友善環境　優養化「藻」不到</div>
+                </li>
+
+        </article>
+    </div>
+    <footer style="background-color:#eeeeed">
+        <table class="shown-on-mobile">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="footer-circle1"></div>
+                        <div class="footer-text">關於我們</div>
+                    </td>
+                    <td>
+                        <div class="footer-circle2"></div>
+                        <div class="footer-text">聯絡我們</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="footer-circle3"></div>
+                        <div class="footer-text">多媒體專題</div>
+                    </td>
+                    <td>
+                        <div class="footer-circle1"></div>
+                        <div class="footer-text">個人作品</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="hidden-on-mobile">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="footer-circle1"></div>
+                        <div class="footer-text">關於我們</div>
+                    </td>
+                    <td>
+                        <div class="footer-circle2"></div>
+                        <div class="footer-text">聯絡我們</div>
+                    </td>
+                    <td>
+                        <div class="footer-circle3"></div>
+                        <div class="footer-text">多媒體專題</div>
+                    </td>
+                    <td>
+                        <div class="footer-circle1"></div>
+                        <div class="footer-text">個人作品</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </footer>
+</body>
+
+</html>
